@@ -2,6 +2,7 @@
   "name": "quetzal",
   "version": "0.0.2",
   "dependencies": {
+    "globalize": "*",
     "polymer": "Polymer/polymer#master",
     "polymer-collapse": "Polymer/polymer-collapse#master",
     "polymer-overlay": "Polymer/polymer-overlay#master",
