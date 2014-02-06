@@ -6,7 +6,8 @@
     "polymer": "Polymer/polymer#master",
     "polymer-collapse": "Polymer/polymer-collapse#master",
     "polymer-overlay": "Polymer/polymer-overlay#master",
-    "polymer-selector": "Polymer/polymer-selector#master"
+    "polymer-selector": "Polymer/polymer-selector#master",
+    "zeroclipboard": "zeroclipboard/zeroclipboard#1.x-master"
   },
   "ignore": [
     "**/.*",

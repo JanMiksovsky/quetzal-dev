@@ -61,3 +61,6 @@
 [submodule "components/quetzal-toggle-button"]
 	path = components/quetzal-toggle-button
 	url = git@github.com:JanMiksovsky/quetzal-toggle-button.git
+[submodule "components/unofficial-zero-clipboard"]
+	path = components/unofficial-zero-clipboard
+	url = git@github.com:JanMiksovsky/unofficial-zero-clipboard.git
