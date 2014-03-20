@@ -91,7 +91,9 @@ ZeroClipboard.dispatch = function (eventName, args) {
     if (cleanEventName) {
       // Get an array of clients that have been glued to the `currentElement`, or
       // get ALL clients if no `currentElement` (e.g. for the global Flash events like "load", etc.)
-      var clients = currentElement ? _getAllClientsClippedToElement(currentElement) : _getAllClients();
+      var clients = (currentElement && _globalConfig.autoActivate === true) ?
+                      _getAllClientsClippedToElement(currentElement) :
+                      _getAllClients();
       for (var i = 0, len = clients.length; i < len; i++) {
         _receiveEvent.call(clients[i], cleanEventName, args);
       }
@@ -321,18 +323,20 @@ var _receiveEvent = function (eventName, args) {
       break;
 
     case 'datarequested':
-      var targetId = element.getAttribute('data-clipboard-target'),
-          targetEl = !targetId ? null : document.getElementById(targetId);
-      if (targetEl) {
-        var textContent = targetEl.value || targetEl.textContent || targetEl.innerText;
-        if (textContent) {
-          this.setText(textContent);
+      if (element) {
+        var targetId = element.getAttribute('data-clipboard-target'),
+            targetEl = !targetId ? null : document.getElementById(targetId);
+        if (targetEl) {
+          var textContent = targetEl.value || targetEl.textContent || targetEl.innerText;
+          if (textContent) {
+            this.setText(textContent);
+          }
         }
-      }
-      else {
-        var defaultText = element.getAttribute('data-clipboard-text');
-        if (defaultText) {
-          this.setText(defaultText);
+        else {
+          var defaultText = element.getAttribute('data-clipboard-text');
+          if (defaultText) {
+            this.setText(defaultText);
+          }
         }
       }
 
@@ -344,6 +348,11 @@ var _receiveEvent = function (eventName, args) {
 
     case 'complete':
       _deleteOwnProperties(_clipData);
+
+      // Focus the context back on the trigger element (blur the Flash element)
+      if (element && element !== _safeActiveElement() && element.focus) {
+        element.focus();
+      }
       break;
   } // switch eventName
 

@@ -7,11 +7,11 @@
     "polymer-key-helper": "Polymer/polymer-key-helper#master"
   },
   "homepage": "https://github.com/Polymer/polymer-overlay",
-  "_release": "ac32890482",
+  "_release": "b234f1fcf7",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "ac32890482149604672834faf28a8f8473753d4f"
+    "commit": "b234f1fcf73556060b5cf193c3711c3cb7687134"
   },
   "_source": "git://github.com/Polymer/polymer-overlay.git",
   "_target": "master",

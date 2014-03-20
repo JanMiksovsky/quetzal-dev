@@ -33,11 +33,11 @@
     "url": "https://github.com/zeroclipboard/zeroclipboard.git"
   },
   "location": "git://github.com/zeroclipboard/zeroclipboard.git",
-  "_release": "028ce9abf2",
+  "_release": "bd3cfdea2f",
   "_resolution": {
     "type": "branch",
     "branch": "1.x-master",
-    "commit": "028ce9abf2f2960fd79e0fae13b3446924be0e8c"
+    "commit": "bd3cfdea2f842d3aa196763bbc9e55962f3ebb41"
   },
   "_source": "git://github.com/zeroclipboard/zeroclipboard.git",
   "_target": "1.x-master",
